@@ -5,8 +5,8 @@ module.exports = defineConfig({
   
   // Development server tənzimləmələri
   devServer: {
-    allowedHosts: 'all', // Bütün hostlara icazə
-    host: '0.0.0.0', // Bütün network interfacelərdə dinlə
+    allowedHosts: 'all', // Bu yeni webpack-dev-server üçün düzgün parametrdir
+    host: '0.0.0.0',
     port: 8080,
     
     // WebSocket connection
@@ -14,14 +14,14 @@ module.exports = defineConfig({
       webSocketURL: 'auto://0.0.0.0:0/ws',
     },
     
-    // Köhnə Vue CLI versiyaları üçün (əgər yuxarıdakı işləməsə)
-    disableHostCheck: true,
+    // QEYD: disableHostCheck artıq dəstəklənmir!
+    // Əvəzinə allowedHosts: 'all' istifadə edirik
   },
   
   // Performance warning-lərini söndür
   configureWebpack: {
     performance: {
-      hints: false, // Asset size warning-lərini gizlət
+      hints: false,
       maxEntrypointSize: 5000000,
       maxAssetSize: 5000000
     }
@@ -30,6 +30,6 @@ module.exports = defineConfig({
   // ESLint console.log warning-lərini söndür
   lintOnSave: false,
   
-  // Production source maps-ı söndür (daha kiçik build)
+  // Production source maps-ı söndür
   productionSourceMap: false,
 })
