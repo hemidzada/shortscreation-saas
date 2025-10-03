@@ -3,7 +3,7 @@ import { createStore } from 'vuex'
 export default createStore({
   state: {
     // host: 'http://localhost/',
-    host: 'https://shortscreation.tech',
+    host: 'https://api.vidhub.ai',
   },
   modules: {
     user: {
