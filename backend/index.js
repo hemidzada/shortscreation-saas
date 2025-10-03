@@ -12,6 +12,14 @@ require('dotenv').config({
   override: true
 })
 
+app.get('/', (req, res) => {
+  res.json({ 
+    status: 'ok', 
+    message: 'VidHub API is running',
+    timestamp: new Date().toISOString()
+  });
+});
+
 let paymentsRoutes = require('./routes/paymentsRouter')
 let usersRoutes = require('./routes/usersRouter')
 let youtubeAccountsRoutes = require('./routes/youtubeAccountsRouter')
