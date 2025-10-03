@@ -36,8 +36,10 @@ app.use('/payment/', paymentsRoutes)
 app.use('/users/', usersRoutes)
 app.use('/youtube-accounts/', youtubeAccountsRoutes)
 
-http.createServer(app).listen(80, () => {
-  console.log(`[success] http server live on port 80`)
+const PORT = process.env.PORT || 80;
+
+http.createServer(app).listen(PORT, '0.0.0.0', () => {
+  console.log(`[success] http server live on port ${PORT}`)
 });
 
 if (process.env.DB_URL) {
